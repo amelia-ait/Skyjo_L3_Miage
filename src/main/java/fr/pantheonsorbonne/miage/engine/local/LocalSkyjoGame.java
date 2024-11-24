@@ -1,6 +1,6 @@
 package fr.pantheonsorbonne.miage.engine.local;
 
-import fr.pantheonsorbonne.miage.engine.WarGameEngine;
+import fr.pantheonsorbonne.miage.engine.SkyjoGameEngine;
 import fr.pantheonsorbonne.miage.exception.NoMoreCardException;
 import fr.pantheonsorbonne.miage.game.Card;
 import fr.pantheonsorbonne.miage.game.Deck;
@@ -12,12 +12,12 @@ import java.util.stream.Collectors;
 /**
  * this class implements the war game locally
  */
-public class LocalWarGame extends WarGameEngine {
+public class LocalSkyjoGame extends SkyjoGameEngine {
 
     private final List<String> initialPlayers;
     private final Map<String, Queue<Card>> playerCards = new HashMap<>();
 
-    public LocalWarGame(Deck deck, int initialHandSize, List<String> initialPlayers) {
+    public LocalSkyjoGame(Deck deck, int initialHandSize, List<String> initialPlayers) {
         super(deck, initialHandSize);
         this.initialPlayers = initialPlayers;
         for (String player : initialPlayers) {
@@ -26,7 +26,7 @@ public class LocalWarGame extends WarGameEngine {
     }
 
     public static void main(String... args) {
-        LocalWarGame localWarGame = new LocalWarGame(new RandomDeck(), 5, Arrays.asList("Joueur1", "Joueur2", "Joueur3"));
+        LocalSkyjoGame localWarGame = new LocalSkyjoGame(new RandomDeck(), 5, Arrays.asList("Joueur1", "Joueur2", "Joueur3"));
         localWarGame.play();
         System.exit(0);
 

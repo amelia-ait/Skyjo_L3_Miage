@@ -4,7 +4,10 @@ package fr.pantheonsorbonne.miage.enums;
  * An enum that represend the possible cards value from a deck
  */
 public enum CardValue {
-    ACE("1", 14),
+    MINUSTWO("-2", -2),
+    MINUSONE("-1", -1),
+    ZERO("0", 0),
+    ONE("1", 1),
     TWO("2", 2),
     THREE("3", 3),
     FOUR("4", 4),
@@ -14,9 +17,9 @@ public enum CardValue {
     EIGHT("8", 8),
     NINE("9", 9),
     TEN("10", 10),
-    JACK("J", 11),
-    QUEEN("Q", 12),
-    KING("K", 13);
+    ELEVEN("J", 11),
+    TWELVE("Q", 12)
+    ;
 
     final private String stringRepresentation;
     final private int rank;

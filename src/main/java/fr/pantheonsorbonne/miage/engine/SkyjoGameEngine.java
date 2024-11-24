@@ -9,12 +9,12 @@ import java.util.*;
 /**
  * this class is a abstract version of the engine, to be used locally on through the network
  */
-public abstract class WarGameEngine {
+public abstract class SkyjoGameEngine {
 
     public final int initialHandSize;
     private final Deck deck;
 
-    protected WarGameEngine(Deck deck, int initialHandSize) {
+    protected SkyjoGameEngine(Deck deck, int initialHandSize) {
         this.deck = deck;
         this.initialHandSize = initialHandSize;
     }
