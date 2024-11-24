@@ -34,7 +34,7 @@ public class SkyjoGameNetorkPlayer {
                     handleCardsForYou(command);
                     break;
                 case "playACard":
-                   // System.out.println("I have " + hand.stream().map(Card::toFancyString).collect(Collectors.joining(" ")));
+                    //System.out.println("I have " + hand.stream().map(Card::toFancyString).collect(Collectors.joining(" ")));
                     handlePlayACard(command);
                     break;
                 case "gameOver":

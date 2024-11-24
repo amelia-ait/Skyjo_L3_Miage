@@ -72,7 +72,7 @@ public class Card {
 
     public static List<Card> getAllPossibleCards() {
         List<Card> possibleCards = new ArrayList<>(CardValue.values().length);
-      //  for (CardColor color : CardColor.values()) {
+       // for (CardColor color : CardColor.values()) {
             for (CardValue value : CardValue.values()) {
                 possibleCards.add(new Card(value));
             //}
@@ -80,7 +80,7 @@ public class Card {
         return possibleCards;
     }
 
-   /* public String toFancyString() {
+    /*public String toFancyString() {
         int rank = this.getValue().ordinal();
         if (rank > 10) {
             rank++;
@@ -88,10 +88,10 @@ public class Card {
         return new String(Character.toChars(this.color.getCode() + rank));
     }*/
 
-    @Override
+    /*@Override
     public int hashCode() {
-        return Objects.hash(getValue());
-    }
+        return Objects.hash(getColor(), getValue());
+    }*/
 
     @Override
     public boolean equals(Object o) {
