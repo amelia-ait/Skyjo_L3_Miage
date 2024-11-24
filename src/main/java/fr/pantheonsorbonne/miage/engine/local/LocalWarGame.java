@@ -47,7 +47,7 @@ public class LocalWarGame extends WarGameEngine {
     @Override
     protected boolean playRound(Queue<String> players, String playerA, String playerB, Queue<Card> roundDeck) {
         System.out.println("New round:");
-        System.out.println(this.playerCards.keySet().stream().filter(p -> !this.playerCards.get(p).isEmpty()).map(p -> p + " has " + this.playerCards.get(p).stream().map(c -> c.toFancyString()).collect(Collectors.joining(" "))).collect(Collectors.joining("\n")));
+        //System.out.println(this.playerCards.keySet().stream().filter(p -> !this.playerCards.get(p).isEmpty()).map(p -> p + " has " + this.playerCards.get(p).stream().map(c -> c.toFancyString()).collect(Collectors.joining(" "))).collect(Collectors.joining("\n")));
         System.out.println();
         return super.playRound(players, playerA, playerB, roundDeck);
 
