@@ -17,8 +17,8 @@ public enum CardValue {
     EIGHT("8", 8),
     NINE("9", 9),
     TEN("10", 10),
-    ELEVEN("J", 11),
-    TWELVE("Q", 12)
+    ELEVEN("11", 11),
+    TWELVE("12", 12)
     ;
 
     final private String stringRepresentation;

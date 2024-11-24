@@ -9,6 +9,8 @@ import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
 
+import org.springframework.core.env.SystemEnvironmentPropertySource;
+
 public class Card {
 
     //private final CardColor color;
@@ -71,12 +73,28 @@ public class Card {
     }
 
     public static List<Card> getAllPossibleCards() {
-        List<Card> possibleCards = new ArrayList<>(CardValue.values().length);
+        List<Card> possibleCards = new ArrayList<>(150);
        // for (CardColor color : CardColor.values()) {
             for (CardValue value : CardValue.values()) {
-                possibleCards.add(new Card(value));
+                if(value.getRank() == -2){
+                    for(int j=0; j<5; j++){
+                        possibleCards.add(new Card(value));
+                    }
+                }
+                else if(value.getRank()==0){
+                    for(int x=0; x<15;x++){
+                        possibleCards.add(new Card(value));
+                        System.out.println();
+                    }
+                }
+                else{
+                    for(int i=0; i<10; i++){
+                        possibleCards.add(new Card(value));
+                    }
+                }
             //}
         }
+        
         return possibleCards;
     }
 
