@@ -1,6 +1,6 @@
 package fr.pantheonsorbonne.miage.game;
 
-import fr.pantheonsorbonne.miage.enums.CardColor;
+//import fr.pantheonsorbonne.miage.enums.CardColor;
 import fr.pantheonsorbonne.miage.enums.CardValue;
 
 import java.util.ArrayList;
@@ -11,12 +11,12 @@ import java.util.stream.Collectors;
 
 public class Card {
 
-    private final CardColor color;
+    //private final CardColor color;
     private final CardValue value;
 
 
-    public Card(CardColor color, CardValue value) {
-        this.color = color;
+    public Card(CardValue value) {
+        //this.color = color;
         this.value = value;
     }
 
@@ -38,9 +38,9 @@ public class Card {
      *
      * @return
      */
-    public CardColor getColor() {
+   /*  public CardColor getColor() {
         return color;
-    }
+    }*/
 
     public static Card[] stringToCards(String cards) {
         if (cards.isEmpty()) {
@@ -58,39 +58,39 @@ public class Card {
      */
     public static Card valueOf(String str) {
         CardValue value;
-        CardColor color;
+        //CardColor color;
         if (str.length() == 3) {//it's a 10
             value = CardValue.valueOfStr(str.substring(0, 2));
-            color = CardColor.valueOfStr(str.substring(2, 3));
+            //color = CardColor.valueOfStr(str.substring(2, 3));
         } else {
             value = CardValue.valueOfStr(str.substring(0, 1));
-            color = CardColor.valueOfStr(str.substring(1, 2));
+            //color = CardColor.valueOfStr(str.substring(1, 2));
         }
-        return new Card(color, value);
+        return new Card(value);
 
     }
 
     public static List<Card> getAllPossibleCards() {
-        List<Card> possibleCards = new ArrayList<>(CardColor.values().length * CardValue.values().length);
-        for (CardColor color : CardColor.values()) {
+        List<Card> possibleCards = new ArrayList<>(CardValue.values().length);
+      //  for (CardColor color : CardColor.values()) {
             for (CardValue value : CardValue.values()) {
-                possibleCards.add(new Card(color, value));
-            }
+                possibleCards.add(new Card(value));
+            //}
         }
         return possibleCards;
     }
 
-    public String toFancyString() {
+   /* public String toFancyString() {
         int rank = this.getValue().ordinal();
         if (rank > 10) {
             rank++;
         }
         return new String(Character.toChars(this.color.getCode() + rank));
-    }
+    }*/
 
     @Override
     public int hashCode() {
-        return Objects.hash(getColor(), getValue());
+        return Objects.hash(getValue());
     }
 
     @Override
@@ -98,11 +98,11 @@ public class Card {
         if (this == o) return true;
         if (!(o instanceof Card)) return false;
         Card card = (Card) o;
-        return getColor() == card.getColor() && getValue() == card.getValue();
+        return getValue() == card.getValue();
     }
 
     @Override
     public String toString() {
-        return this.getValue().getStringRepresentation() + this.getColor().getStringRepresentation();
+        return this.getValue().getStringRepresentation();
     }
 }

@@ -3,7 +3,7 @@ package fr.pantheonsorbonne.miage.enums;
 /**
  * List the possible colors of a card
  */
-public enum CardColor {
+/*public enum CardColor {
     SPADE(127137),
     HEART(127137 + 16),
     DIAMOND(127137 + 16 * 2),
@@ -31,4 +31,4 @@ public enum CardColor {
     public String getStringRepresentation() {
         return "" + this.name().charAt(0);
     }
-}
+}*/
